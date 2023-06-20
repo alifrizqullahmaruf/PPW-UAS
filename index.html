@@ -1,0 +1,542 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <style>
+    svg {
+      color: black;
+    }
+    svg:hover{
+      color: white;
+    }
+    .card-kotak1 {
+      display: none;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      z-index: 3;
+    }
+
+    .card-kotak2 {
+      display: none;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      z-index: 3;
+    }
+    .cart-user{
+      display: none;
+      position: fixed;
+      z-index: 3;
+      left: 50%;
+      top: 20%;
+      transform: translate(-50%, -20%);
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+</head>
+<body>
+      <!--* Card Login -->
+      <div id="card-login" class=" rounded-2xl card-kotak1 w-70 py-8 px-4 text-center bg-[#6A9CFF]">
+        <h4 class="title text-white text-2xl font-bold mb-4 ">Login</h4>
+        <form action="user.php" method="post">
+          <div class="field flex items-center justify-center gap-2 bg-white rounded-md py-2 px-4">
+            <svg class="input-icon h-5 w-5 " viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <path d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path>
+            </svg>
+            <input autocomplete="off" id="logemail" placeholder="Username" class="focus:outline-none input-field bg-transparent text-black" name="Username" type="text">
+          </div>
+          <div class="field flex items-center justify-center gap-2 bg-white rounded-md py-2 px-4 mt-2">
+            <svg class="input-icon h-5 w-5 " viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <path d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z"></path>
+            </svg>
+            <input autocomplete="off" id="logpass" placeholder="Password" class="focus:outline-none input-field bg-transparent text-black" name="Password" type="password">
+          </div>
+          <button class="btn mt-4 bg-white text-black font-semibold uppercase py-2 px-4 rounded-md shadow-md transition-colors duration-300 hover:bg-[#2F71DD] hover:text-white" type="submit" id="loginButton" name="UserBtn" >Login</button>
+          <a href="#" class="btn-link text-white text-sm block mt-2" id="register-now">Register Now!</a>
+        </form>
+      </div>
+      <!--* Card Register -->
+      <div id="card-register" class="rounded-2xl card-kotak2 w-70 py-8 px-4 text-center bg-[#6A9CFF]">
+        <h4 class="title text-white text-2xl font-bold mb-4 ">Register</h4>
+        <form action="user.php" method="post">
+          <!-- username -->
+          <div class="field flex items-center justify-center gap-2 bg-white rounded-md py-2 px-4 mt-2">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="24.000000pt" height="24.000000pt" viewBox="0 0 24.000000 24.000000"
+            preserveAspectRatio="xMidYMid meet">
+           
+           <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
+           fill="currentColor" stroke="none">
+           <path d="M90 206 c-28 -35 11 -93 48 -70 35 22 22 84 -18 84 -10 0 -23 -7 -30
+           -14z"/>
+           <path d="M55 85 c-46 -46 -35 -55 65 -55 100 0 111 9 65 55 -34 35 -96 35
+           -130 0z"/>
+           </g>
+           </svg>
+            <input autocomplete="off" id="username" placeholder="Username" class=" focus:outline-none  input-field bg-transparent text-black" name="Username" type="Username">
+          </div>
+          <!-- Alamat email -->
+          <div class="field flex items-center justify-center gap-2 bg-white rounded-md py-2 px-4 mt-2">
+            <svg class="input-icon h-5 w-5 " viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <path d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path>
+            </svg>
+            <input autocomplete="off" id="email" placeholder="Email" class="focus:outline-none  input-field bg-transparent text-black" name="Email" type="Email" value="Email">
+          </div>
+          <!-- password -->
+          <div class="field flex items-center justify-center gap-2 bg-white rounded-md py-2 px-4 mt-2">
+            <svg class="input-icon h-5 w-5 " viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <path d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z"></path>
+            </svg>
+            <input autocomplete="off" id="Password" placeholder="Password" class="focus:outline-none  input-field bg-transparent text-black" name="Password" type="password">
+          </div>
+          <!-- konfirmasi password -->
+          <div class="field flex items-center justify-center gap-2 bg-white rounded-md py-2 px-4 mt-2">
+            <svg class="input-icon h-5 w-5 " viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <path d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z"></path>
+            </svg>
+            <input autocomplete="off" id="Konfirmasi password" placeholder="Konfirmasi password" class="focus:outline-none  input-field bg-transparent text-black" name="KonfirmasiPassword" type="password">
+          </div>
+  
+          <button class="btn mt-4 bg-white text-black font-semibold uppercase py-2 px-4 rounded-md shadow-md transition-colors duration-300 hover:bg-[#2F71DD] hover:text-white" id="registerButton" type="submit" name="UserBtn" >Register</button>
+        </form>
+      </div>
+
+      <!--* Cart  -->
+      <div class="cart-user" id="cart-user">
+        <div class="cart">
+          <div class="cart00">
+            <div class="gamabar">
+
+            </div>
+            <div class="text">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="container_utama">
+
+    <!--? conainer 1 -->
+    <div class="container01 m-5">
+      <div class="navbar justify-between p-5">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <label tabindex="0" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </svg>
+              </label>
+              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="" class="text-[25px] font-semibold">Home</a></li>
+                <li><a href="" class="text-[25px] font-semibold">Products</a></li>
+                <li><a href="" class="text-[25px] font-semibold">About</a></li>
+                <li><a href="" class="text-[25px] font-semibold">FAQs</a></li>
+              </ul>
+            </div>
+            <img src="img/icon_nike_1.svg" alt="" class="w-[80px]">
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a href="" class="text-[25px] font-semibold">Home</a></li>
+              <li><a href="" class="text-[25px] font-semibold">Products</a></li>
+              <li><a href="" class="text-[25px] font-semibold">About</a></li>
+              <li><a href="" class="text-[25px] font-semibold">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <!--* tombol cart -->
+            <div class="ml-5 rounded-lg w-[40px] h-[40px] hover:bg-[#2F71DD] flex items-center justify-center" id="cartButton">
+              <svg version="1.0" class="" xmlns="http://www.w3.org/2000/svg"
+                width="24.000000pt" height="24.000000pt" viewBox="0 0 24.000000 24.000000"
+                preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
+                  fill="currentColor" stroke="none">
+                  <path d="M20 200 c0 -5 6 -10 13 -10 6 0 21 -21 31 -48 27 -66 33 -72 81 -72
+                    42 0 43 1 59 47 9 26 16 48 16 50 0 2 -33 3 -73 3 -61 0 -74 3 -85 20 -13 21
+                    -42 28 -42 10z" />
+                  <path d="M90 45 c0 -8 7 -15 15 -15 8 0 15 7 15 15 0 8 -7 15 -15 15 -8 0 -15
+                    -7 -15 -15z" />
+                  <path d="M160 45 c0 -8 7 -15 15 -15 8 0 15 7 15 15 0 8 -7 15 -15 15 -8 0
+                    -15 -7 -15 -15z" />
+                </g>
+              </svg>
+            </div>
+            <!--* tombol user -->
+            <div class="ml-5 rounded-lg w-[40px] h-[40px] hover:bg-[#2F71DD] flex items-center justify-center" id="userbutton">
+              <svg version="1.0" class="" xmlns="http://www.w3.org/2000/svg"
+                width="24.000000pt" height="24.000000pt" viewBox="0 0 24.000000 24.000000"
+                preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
+                  <path d="M90 206 c-28 -35 11 -93 48 -70 35 22 22 84 -18 84 -10 0 -23 -7 -30 -14z" />
+                  <path d="M55 85 c-46 -46 -35 -55 65 -55 100 0 111 9 65 55 -34 35 -96 35 -130 0z" />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!--? Konten  -->
+      <div class="konten grid grid-cols-1 lg:grid-cols-2 m-5">
+        <!--* konten kiri -->
+        <div class="konten_kiri text-center lg:text-left">
+          <p class="font-extrabold text-[100px] text-center lg:text-left">FIND YOUR DREAM.</p>
+          <p class="font-normal text-[25px] text-center lg:text-left">Nike is a globally recognized company in the sportswear and footwear industry.</p>
+          <button class="btn bg-[#2F71DD] w-[252px] h-[76px] mt-5 mx-auto lg:mx-0">
+            <p class="text-[25px]">Explore More</p>
+          </button>
+        </div>
+        <!--* konten kanan -->
+        <div class="konten_kanan hidden lg:flex justify-center lg:justify-end">
+          <img src="img/Gambar_logo(2).png" alt="" class="m-auto">
+        </div>
+      </div>
+      
+
+
+      
+    </div>
+
+    <!--? Fitur -->
+    <div class="fitur">
+      <div class="fitur_sub grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20">
+        <!--* Our feature -->
+        <div class="fitur01 m-6 md:m-12 flex bg-white shadow m-12  drop-shadow-lg rounded-2xl hover:origin-top ">
+          <div class="flex items-center justify-center gambar bg-white hover:bg-[#2F71DD] p-4 rounded-2xl w-auto p-3 md:p-4">
+            <svg class="" version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="106.000000pt" height="106.000000pt" viewBox="0 0 106.000000 106.000000"
+            preserveAspectRatio="xMidYMid meet">
+           
+           <g transform="translate(0.000000,106.000000) scale(0.100000,-0.100000)"
+           fill="currentColor" stroke="none">
+           <path d="M665 955 c-152 -67 -138 -46 -133 -193 5 -137 21 -187 84 -261 29
+           -35 136 -111 155 -111 42 0 173 116 208 186 38 73 57 281 29 315 -11 12 -229
+           111 -240 108 -2 0 -48 -20 -103 -44z m199 -62 l88 -37 -4 -110 c-3 -100 -6
+           -116 -31 -158 -15 -27 -53 -67 -83 -89 -64 -49 -74 -47 -151 23 -65 61 -85
+           112 -91 233 l-4 100 83 37 c46 20 89 37 94 37 6 1 50 -15 99 -36z"/>
+           <path d="M796 748 l-49 -61 -26 32 c-28 34 -58 41 -68 15 -7 -19 65 -127 88
+           -132 20 -4 149 158 149 187 0 15 -6 21 -22 21 -16 0 -38 -19 -72 -62z"/>
+           <path d="M56 788 c-14 -19 -16 -66 -16 -311 l0 -288 25 -25 25 -25 446 3 446
+           3 19 24 c17 21 19 38 17 144 -3 103 -6 121 -21 131 -34 21 -47 -16 -47 -130 0
+           -89 -2 -102 -17 -106 -15 -3 -757 -2 -815 1 -16 1 -18 17 -18 181 l0 180 174
+           0 c181 0 205 5 190 44 -5 14 -29 16 -185 16 l-179 0 0 60 0 60 174 0 c141 0
+           176 3 186 15 7 8 10 22 6 30 -4 13 -36 15 -200 15 -190 0 -195 -1 -210 -22z"/>
+           <path d="M170 435 c-24 -29 5 -45 85 -45 80 0 109 16 85 45 -9 11 -33 15 -85
+           15 -52 0 -76 -4 -85 -15z"/>
+           </g>
+           </svg>
+          </div>
+          <div class="teks flex flex flex-col justify-center text-center m-5">
+            <p class="text-[20px] md:text-[30px] font-semibold mb-5">Secure Payments</p>
+            <p class="text-[20px] font-normal ">Pembayaran yang aman.</p>
+          </div>
+        </div>
+        <div class="fitur02  m-6 md:m-12 flex bg-white shadow m-12 drop-shadow-lg  rounded-2xl hover:origin-top ">
+          <div class="flex items-center justify-center gambar bg-white hover:bg-[#2F71DD] p-4 rounded-2xl w-auto p-3 md:p-4">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="80.000000pt" height="80.000000pt" viewBox="0 0 80.000000 80.000000"
+            preserveAspectRatio="xMidYMid meet">
+           
+           <g transform="translate(0.000000,80.000000) scale(0.100000,-0.100000)"
+           fill="currentColor" stroke="none">
+           <path d="M29 771 c-29 -30 -36 -55 -20 -80 12 -19 39 -7 43 20 2 12 10 26 19
+           32 24 15 66 1 72 -25 5 -17 -9 -36 -69 -95 -101 -98 -98 -108 26 -108 88 0 95
+           1 95 20 0 17 -8 20 -59 23 l-58 3 56 52 c51 48 56 57 56 94 0 84 -100 124
+           -161 64z"/>
+           <path d="M260 709 c-41 -50 -76 -100 -78 -110 -3 -17 4 -19 67 -19 67 0 71 -1
+           71 -22 0 -32 15 -52 34 -45 10 4 16 18 16 37 0 19 5 30 14 30 25 0 30 22 8 39
+           -18 14 -22 28 -24 96 -2 61 -6 80 -18 83 -9 1 -47 -36 -90 -89z m60 -49 c0
+           -38 -2 -40 -30 -40 -16 0 -30 3 -30 6 0 7 51 74 56 74 2 0 4 -18 4 -40z"/>
+           <path d="M430 772 c0 -15 11 -22 48 -32 109 -27 192 -96 241 -199 22 -48 26
+           -70 26 -146 0 -80 -4 -97 -29 -148 -35 -68 -108 -140 -174 -170 -67 -31 -217
+           -31 -284 0 -107 49 -191 165 -206 281 -6 48 -10 57 -27 57 -18 0 -20 -6 -18
+           -60 2 -45 11 -77 37 -131 43 -86 103 -144 194 -187 61 -29 76 -32 162 -32 86
+           0 101 3 162 32 126 59 204 161 229 296 15 82 3 163 -37 244 -51 105 -175 199
+           -279 211 -40 4 -45 2 -45 -16z"/>
+           <path d="M362 449 c-106 -106 -192 -196 -192 -201 0 -5 7 -11 16 -15 11 -4 71
+           49 209 187 178 178 211 220 171 220 -7 0 -99 -86 -204 -191z"/>
+           <path d="M463 414 c-9 -23 7 -33 63 -36 l51 -3 -63 -100 c-35 -55 -64 -105
+           -64 -112 0 -22 22 -26 40 -7 36 38 161 247 156 260 -8 21 -174 20 -183 -2z"/>
+           </g>
+           </svg>
+          </div>
+          <div class="teks flex flex flex-col justify-center text-center m-5">
+            <p class="text-[20px] md:text-[30px] font-semibold mb-5">24/7 Service</p>
+            <p class="text-[20px] font-normal ">Layanan pelanggan.</p>
+          </div>
+        </div>
+        <div class="fitur03  m-6 md:m-12 flex bg-white shadow m-12 drop-shadow-lg  rounded-2xl hover:origin-top ">
+          <div class="flex items-center justify-center gambar bg-white hover:bg-[#2F71DD] p-4 rounded-2xl w-auto p-3 md:p-4">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="90.000000pt" height="90.000000pt" viewBox="0 0 90.000000 90.000000"
+            preserveAspectRatio="xMidYMid meet">
+           
+           <g transform="translate(0.000000,90.000000) scale(0.100000,-0.100000)"
+           fill="currentColor" stroke="none">
+           <path d="M173 715 c-10 -26 8 -33 95 -37 59 -2 85 -7 92 -18 19 -31 -9 -40
+           -120 -40 -83 0 -110 -3 -120 -15 -10 -12 -10 -18 0 -30 9 -11 45 -15 169 -17
+           148 -3 156 -4 156 -23 0 -19 -7 -20 -100 -22 -131 -4 -147 -8 -143 -36 3 -20
+           9 -22 73 -25 79 -3 100 -14 84 -43 -9 -17 -22 -19 -139 -19 l-130 0 0 -25 c0
+           -23 4 -25 44 -25 51 0 76 -20 56 -45 -7 -8 -25 -15 -40 -15 -27 0 -46 -22 -34
+           -41 3 -5 24 -9 48 -9 34 0 48 -6 71 -30 38 -39 74 -39 118 0 33 29 39 30 127
+           30 89 0 93 -1 120 -30 38 -40 82 -41 119 -1 18 19 40 31 61 33 42 4 49 25 53
+           158 2 89 0 99 -30 163 l-32 67 -83 0 -83 0 0 52 0 53 -213 3 c-186 2 -213 0
+           -219 -13z m591 -216 c14 -33 24 -65 20 -70 -3 -5 -34 -9 -68 -9 -77 0 -89 11
+           -80 71 9 68 10 69 57 69 l44 0 27 -61z m-444 -239 c0 -24 -26 -38 -42 -22 -8
+           8 -8 15 2 27 18 21 40 19 40 -5z m364 11 c10 -16 -5 -41 -25 -41 -21 0 -25 20
+           -7 38 14 14 25 15 32 3z"/>
+           <path d="M72 501 c-8 -5 -12 -17 -10 -27 4 -25 65 -33 74 -10 13 33 -32 58
+           -64 37z"/>
+           </g>
+           </svg>
+          </div>
+          <div class="teks flex flex flex-col justify-center text-center m-5">
+            <p class="text-[20px] md:text-[30px] font-semibold mb-5">Fast Delivery</p>
+            <p class="text-[20px] font-normal ">pengiriman yang cepat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--? container 2 -->
+    <div class="container02 grid grid-row-2 p-12 ">
+    <!--* Our colection -->
+      <div class="colection mt-10">
+        <div class="text">
+          <p class="text-[70px] font-semibold text-center"> ⭐ Our Colection ⭐ </p>
+        </div>
+        <div class="corassssel  grid grid-cols-1 md:grid-cols-3 gap-8 flex flex-row items-center">
+          <div class="card01 ">
+            <div class="card card-compact w-96 bg-base-100 shadow-xl">
+              <figure><img src="img/Colection_Nike Air Max 90.png" alt="Shoes" /></figure>
+              <div class="card-body flex flex-col items-center">
+                <h2 class="card-title">Nike Air Max 90.png</h2>
+                <p>$499</p>
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary w-full">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card02 ">
+            <div class="card card-compact w-96 bg-base-100 shadow-xl">
+              <figure><img src="img/Colection_NIke Air Impact 4_139.png" alt="Shoes" /></figure>
+              <div class="card-body flex flex-col items-center">
+                <h2 class="card-title">NIke Air Impact 4</h2>
+                <p>$139</p>
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary w-full">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card03 ">
+            <div class="card card-compact w-96 bg-base-100 shadow-xl">
+              <figure><img src="img/Colection_Nike Metcon 8 AMP_259.png" alt="Shoes" /></figure>
+              <div class="card-body flex flex-col items-center">
+                <h2 class="card-title">Nike Metcon 8 AMP</h2>
+                <p>$259</p>
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary w-full">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--* Top Selling -->
+      <div class="top mt-20">
+        <div class="text">
+          <p class="text-[70px] font-semibold text-center"> 🔥 Top Selling Products 🔥 </p>
+        </div>
+        <div class="corassssel  grid grid-cols-1 md:grid-cols-3 gap-8 flex flex-row items-center">
+          <div class="card01 ">
+            <div class="card items-center w-96 bg-base-100 shadow-xl">
+              <figure><img src="img/Sepatu01(air jordan1 High OG_199).png" alt="Shoes" /></figure>
+              <div class="card-body flex flex-col items-center">
+                <h2 class="card-title">Air Jordan1 High OG</h2>
+                <p>$199</p>
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary w-full">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card02 ">
+            <div class="card items-center w-96 bg-base-100 shadow-xl">
+              <figure><img src="img/Sepatu02(air jordan1 retro High OG_299).png" alt="Shoes" /></figure>
+              <div class="card-body flex flex-col items-center">
+                <h2 class="card-title">Air Jordan1 Retro High OG</h2>
+                <p>$299</p>
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary w-full">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card03 ">
+            <div class="card items-center w-96 bg-base-100 shadow-xl">
+              <figure><img src="img/Sepatu03(air jordan1 Mid_249).png" alt="Shoes" /></figure>
+              <div class="card-body flex flex-col items-center">
+                <h2 class="card-title">Air Jordan 1 Mid</h2>
+                <p>$299</p>
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary w-full">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <!--? Container 3 -->
+    <div class="container03 grid grid-rows-[3/4,1/4]">
+      <div class="costumers flex flex-col items-center justify-center space-y-8 mt-12">
+
+        <!--*==========What our clients says==========*-->
+        <div class="atas items-center justify-center">
+          <p class="text-[70px] font-semibold text-center"> What our clients says </p>
+          <img src="img/Clients.png" alt="" class="w-[1000px] mt-20">
+        </div>
+        <div class="bawah items-center justify-center mt-12">
+          <p class="font-normal text-[25px] text-center mt-20 ml-[30px] mr-[30px]">"Wow, I am thoroughly impressed with your company's fast delivery service! 
+            I placed an order yesterday, and it arrived at my doorstep today. 
+            The efficiency and speed of your delivery exceeded my expectations. Keep up the great work!"</p>
+            <p class="text-[40px] font-semibold text-center mt-5">Alif Rizqullah Maruf</p>
+            <p class="text-[24px] text-center mt-5">Co founder “Hewa” </p>
+          </div>
+        </div>
+        <!--*==========Footer==========*-->
+        <footer class="footer p-10 bg-[#2F71DD] mt-[100px]">
+          <div class="text-lg font-semibold text-white">
+            <svg class="w-[100px] h-[100px]" version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+            preserveAspectRatio="xMidYMid meet">
+
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+            fill="#ffffff" stroke="none">
+            <path d="M621 3323 c-351 -350 -620 -841 -621 -1134 -1 -229 119 -383 354
+            -458 191 -61 339 -64 553 -11 173 42 251 72 1263 487 509 209 1369 561 1912
+            783 543 222 986 405 984 407 -7 7 -2218 -543 -2941 -732 -429 -112 -820 -211
+            -870 -221 -110 -20 -281 -22 -355 -5 -240 58 -377 270 -340 524 19 133 63 258
+            138 395 22 39 38 72 36 72 -3 0 -53 -48 -113 -107z"/>
+            </g>
+            </svg>
+            <p>NIke<br/>Providing reliable shoes n m since 1992</p>
+          </div> 
+          <div class="text-white">
+            <span class=" font-bold text-lg">Services</span> 
+            <a class="link link-hover">Branding</a> 
+            <a class="link link-hover">Design</a> 
+            <a class="link link-hover">Marketing</a> 
+            <a class="link link-hover">Advertisement</a>
+          </div> 
+          <div  class="text-white">
+            <span class=" font-bold text-lg">Company</span> 
+            <a class="link link-hover">About us</a> 
+            <a class="link link-hover">Contact</a> 
+            <a class="link link-hover">Jobs</a> 
+            <a class="link link-hover">Press kit</a>
+          </div> 
+          <div  class="text-white">
+            <span class=" font-bold text-lg">Legal</span> 
+            <a class="link link-hover">Terms of use</a> 
+            <a class="link link-hover">Privacy policy</a> 
+            <a class="link link-hover">Cookie policy</a>
+          </div>
+        </footer>
+    </div>
+  </div>
+  <!--*==========Footer==========*-->
+  <script>
+    const containerUtama = document.querySelector(".container_utama");
+    const cardLogin = document.getElementById('card-login');
+    const cardRegister = document.getElementById('card-register');
+    const registerNowButton = document.getElementById('register-now');
+    const userbutton = document.getElementById('userbutton');
+    const registerBtn = document.getElementById('registerButton');
+    const loginButton = document.getElementById('loginButton');
+
+    // const cartuser = document.getElementById('cart-user');
+    // const cartButton = document.getElementById('cartButton');
+
+    //fungsi ketika click button login maka kembali ke menu halaman
+    function backHome(){
+      cardLogin.style.display = 'none';
+      containerUtama.style.display = 'block';
+    }
+    function backHome2(){
+      cardRegister.style.display = 'none';
+      containerUtama.style.display = 'block';
+    }
+
+    // click button
+    registerButton.addEventListener('click', backHome2);
+    loginButton.addEventListener('click', backHome);
+
+
+    // FUngsi unutk menampilkan card login
+    userbutton.addEventListener('click',showLoginCard)
+    
+    // fungsi munculin Login
+    function showLoginCard(){
+      cardLogin.style.display = 'block';
+      containerUtama.style.display = 'none';
+    }
+
+    // Fungsi untuk menampilkan card register dan menyembunyikan card login
+    function showCardRegister() {
+      cardLogin.style.display = 'none';
+      cardRegister.style.display = 'block';
+    }
+
+    // Menambahkan event listener pada tombol "Register Now"
+    registerNowButton.addEventListener('click', showCardRegister);
+
+    // Function to handle form submission and redirect to home
+    function handleFormSubmission(event) {
+      event.preventDefault(); // Prevent form from submitting
+      // Perform form validation here if needed
+
+      // Submit the form using AJAX or other methods
+      // ...
+
+      // Redirect to home or show success message
+      containerUtama.style.display = 'block';
+      cardLogin.style.display = 'none';
+    }
+
+    // Add event listeners
+    registerNowButton.addEventListener('click', showCardRegister);
+    registerBtn.addEventListener('click', handleFormSubmission);
+    loginButton.addEventListener('click', function() {
+      containerUtama.style.display = 'block';
+      cardRegister.style.display = 'none';
+    });
+
+        // Menampilkan awal card login dan menyembunyikan card register
+    showCardLogin();
+    showLoginCard();
+
+  </script>
+</body>
+</html>
